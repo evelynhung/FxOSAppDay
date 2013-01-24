@@ -1,0 +1,25 @@
+{
+  "version": "2.0",
+  "name": "FxOS Test App",
+  "description": "Firefox OS Test App",
+  "launch_path": "index.html",
+  "developer": {
+    "name": "Evelyn Hung",
+    "url": "https://evelynhung.github.com/"
+  },
+  "permissions": {
+    "geolocation": {},
+    "device-storage:pictures":{ "access": "readonly" }
+  },
+  "orientation": "portrait-primary",
+  "locales": {
+    "en-US": {
+      "name": "FxOS Test App",
+      "description": "Firefox OS test app"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "style/icons/logo_128.png"
+  }
+}
