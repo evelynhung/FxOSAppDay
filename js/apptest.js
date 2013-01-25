@@ -74,7 +74,7 @@ var FirefoxOSTest = {
     activityRequest.onsuccess = function onPickSuccess() {
       if (!activityRequest.result.blob)
         return;
-      ele.textContent = activityRequest.result.url;  
+      ele.textContent = activityRequest.result.blob; 
     };
     activityRequest.onerror = function onPickError() {
       console.warn('pick failed!');
@@ -93,6 +93,10 @@ var FirefoxOSTest = {
       }   
     };  
     xhr.send();
+  },
+
+  testAudiochannel: function(e) {
+
   },
 
   testDevicestorage: function(e) {
