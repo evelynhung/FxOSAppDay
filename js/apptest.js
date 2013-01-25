@@ -30,24 +30,29 @@ var FirefoxOSTest = {
   testNotification: function(e) {
     var notification = navigator.mozNotification.createNotification('Title', 
       'hello world', 'style/icons/logo_128.png');
+    notification.show();
   },
+
   testDevicestorage: function(e) {
     var type = 'pictures';
     var deviceStorage = navigator.getDeviceStorage(type);
     if (!deviceStorage) {
       console.warn('Error: cannot get DeviceStorage for ' + type);
       return;
-    }
-    var filename = 'downloads/DSC02798.JPG';
-    var request = deviceStorage.get(filename);
+    }   
+    var ele = document.getElementById('result');
+    ele.innerHTML = '';
+    var request = deviceStorage.enumerate();
     request.onsuccess = function(e) {
       var file = request.result;
-      var url = URL.createObjectURL(file);
-      var myImage = document.getElementById('profilePhoto');
-      myImage.src = url;                                                                                                                                                                     
+      ele.innerHTML += 'file name ' + file.name + ', ';
+      ele.innerHTML += 'file size ' + file.size + ', ';
+      ele.innerHTML += 'file type ' + file.type + ', ';
+      ele.innerHTML += 'file last Modified Date ' + file.lastModifiedDate + '<br>';
+      request.continue();
     };
     request.onerror = function() {
-      console.warn('Error: get file from SD card - ' + request.error.name);
+      console.warn('Error: cannot list files in SD card - ' + request.error.name);
     };
   }
 

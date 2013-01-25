@@ -2,6 +2,7 @@
   "version": "2.0",
   "name": "FxOS Test App",
   "description": "Firefox OS Test App",
+  "type": "privileged",
   "launch_path": "index.html",
   "developer": {
     "name": "Evelyn Hung",
@@ -9,7 +10,8 @@
   },
   "permissions": {
     "geolocation": {},
-    "device-storage:pictures":{ "access": "readonly" }
+    "device-storage:pictures": { "access": "readonly" },
+    "desktop-notification":{}
   },
   "orientation": "portrait-primary",
   "locales": {
