@@ -138,9 +138,9 @@ var FirefoxOSTest = {
       var request2 = navigator.mozContacts.find(options);
       request2.onsuccess = function findSuccess() {
         var firstContact = request2.result[0];
-        ele.innerHTML += 'name' + firstContact.name + '<br>';
-        ele.innerHTML += 'tel number' + firstContact.tel[0].value + '<br>';
-        ele.innerHTML += 'update time' + new Date(firstContact.updated) + '<br>';
+        ele.innerHTML += 'name: ' + firstContact.name + '<br>';
+        ele.innerHTML += 'tel number: ' + firstContact.tel[0].value + '<br>';
+        ele.innerHTML += 'update time: ' + new Date(firstContact.updated) + '<br>';
       };
       request2.onerror = function findError() {
         console.warn('Error: cannot find any contacts - ' + request2.error.name);
