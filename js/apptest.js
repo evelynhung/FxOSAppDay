@@ -6,12 +6,8 @@ var FirefoxOSTest = {
     vibration.addEventListener('click', this.testVibration);
     var notification = document.getElementById('notification');
     notification.addEventListener('click', this.testNotification);
-    var orientation = document.getElementById('orientation');
-    orientation.addEventListener('click', this.testOrientation);
     var systemxhr = document.getElementById('systemxhr');
     systemxhr.addEventListener('click', this.testSystemxhr);
-    var audiochannel = document.getElementById('audiochannel');
-    audiochannel.addEventListener('click', this.testAudiochannel);
     var webactivitywindow = document.getElementById('webactivitywindow');
     webactivitywindow.addEventListener('click', this.testWebactivityWindow);
     var webactivityinline = document.getElementById('webactivityinline');
@@ -89,14 +85,9 @@ var FirefoxOSTest = {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         ele.textContent = xhr.responseText;
-        console.log("====== " + xhr.responseText);
       }   
     };  
     xhr.send();
-  },
-
-  testAudiochannel: function(e) {
-
   },
 
   testDevicestorage: function(e) {
