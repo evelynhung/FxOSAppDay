@@ -10,8 +10,10 @@
   },
   "permissions": {
     "geolocation": {},
+    "desktop-notification":{},
+    "systemXHR": {},
     "device-storage:pictures": { "access": "readonly" },
-    "desktop-notification":{}
+    "contacts":{ "access": "readcreate" }
   },
   "orientation": "portrait-primary",
   "locales": {
